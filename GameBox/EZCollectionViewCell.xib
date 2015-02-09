@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="6250" systemVersion="14A389" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6244"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="gTV-IL-0wX" customClass="EZCollectionViewCell">
+            <rect key="frame" x="0.0" y="0.0" width="140" height="90"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                <rect key="frame" x="0.0" y="0.0" width="140" height="90"/>
+                <subviews>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="c3e-Gx-odO">
+                        <rect key="frame" x="10" y="10" width="60" height="60"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="60" id="Xfe-dZ-utI"/>
+                            <constraint firstAttribute="width" constant="60" id="qrO-9p-u5u"/>
+                        </constraints>
+                    </imageView>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="泡泡龙" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PJK-mC-Fnw">
+                        <rect key="frame" x="80" y="10" width="50" height="20"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="20" id="PvB-HZ-bOZ"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="倚天一出谁与争锋" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lAf-Hz-SdR">
+                        <rect key="frame" x="10" y="72" width="122" height="15"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="W95-oS-H20">
+                        <rect key="frame" x="80" y="47" width="49" height="23"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="49" id="6Fw-Zk-GUS"/>
+                            <constraint firstAttribute="height" constant="23" id="Dyv-dW-v5F"/>
+                        </constraints>
+                        <state key="normal" title="马上玩">
+                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                        </state>
+                    </button>
+                </subviews>
+                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+            </view>
+            <color key="backgroundColor" red="0.89720184950000004" green="0.47366124879999999" blue="0.032247734190000002" alpha="1" colorSpace="calibratedRGB"/>
+            <constraints>
+                <constraint firstItem="c3e-Gx-odO" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="10" id="HMB-wF-IyP"/>
+                <constraint firstAttribute="trailing" secondItem="lAf-Hz-SdR" secondAttribute="trailing" constant="8" id="TUe-ye-eyb"/>
+                <constraint firstItem="lAf-Hz-SdR" firstAttribute="top" secondItem="c3e-Gx-odO" secondAttribute="bottom" constant="2" id="TXh-Sh-BZR"/>
+                <constraint firstItem="lAf-Hz-SdR" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="10" id="UKy-lh-pkx"/>
+                <constraint firstAttribute="bottom" secondItem="lAf-Hz-SdR" secondAttribute="bottom" constant="3" id="Vwe-Yg-8rd"/>
+                <constraint firstAttribute="trailing" secondItem="PJK-mC-Fnw" secondAttribute="trailing" constant="10" id="eRz-ae-2bI"/>
+                <constraint firstItem="W95-oS-H20" firstAttribute="leading" secondItem="c3e-Gx-odO" secondAttribute="trailing" constant="10" id="edD-67-xUl"/>
+                <constraint firstItem="c3e-Gx-odO" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" constant="10" id="fWp-Zg-Rbo"/>
+                <constraint firstItem="PJK-mC-Fnw" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" constant="10" id="gxa-j5-3C5"/>
+                <constraint firstItem="PJK-mC-Fnw" firstAttribute="leading" secondItem="c3e-Gx-odO" secondAttribute="trailing" constant="10" id="lNR-zs-mrQ"/>
+                <constraint firstItem="lAf-Hz-SdR" firstAttribute="top" secondItem="W95-oS-H20" secondAttribute="bottom" constant="2" id="rDR-o4-1S8"/>
+            </constraints>
+            <connections>
+                <outlet property="iconView" destination="c3e-Gx-odO" id="Vbk-w1-WU0"/>
+                <outlet property="infoLbl" destination="lAf-Hz-SdR" id="LSh-oi-mMq"/>
+                <outlet property="playButton" destination="W95-oS-H20" id="HC0-lf-yjm"/>
+                <outlet property="titleLbl" destination="PJK-mC-Fnw" id="0nE-Pm-Yab"/>
+            </connections>
+            <point key="canvasLocation" x="273" y="448"/>
+        </collectionViewCell>
+    </objects>
+</document>

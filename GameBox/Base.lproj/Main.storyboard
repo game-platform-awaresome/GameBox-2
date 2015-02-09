@@ -1,25 +1,95 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6211" systemVersion="14A298i" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6250" systemVersion="14A389" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="mCO-Jn-xhQ">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6204"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6244"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
-        <scene sceneID="tne-QT-ifu">
+        <!--Navigation Controller-->
+        <scene sceneID="rjh-XO-qkc">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
-                        <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
-                    </view>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+                <navigationController id="mCO-Jn-xhQ" sceneMemberID="viewController">
+                    <nil key="simulatedStatusBarMetrics"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="WOn-JM-X9S">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="KG6-zg-Evt" kind="relationship" relationship="rootViewController" id="dTW-qA-sQO"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="2In-V1-hbI" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="-538" y="469"/>
+        </scene>
+        <!-- 围住神经猫-->
+        <scene sceneID="xPR-Kc-scF">
+            <objects>
+                <viewController id="KG6-zg-Evt" customClass="IndexViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="1fD-Bd-CHa"/>
+                        <viewControllerLayoutGuide type="bottom" id="Bfc-E8-FlC"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="a74-tr-D3O">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="cVg-07-G9G">
+                                <rect key="frame" x="0.0" y="44" width="320" height="180"/>
+                                <color key="backgroundColor" red="0.37973057770000002" green="0.72383055890000003" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="cVg-07-G9G" secondAttribute="height" multiplier="32:15" constant="-64" id="ORH-iQ-Fho"/>
+                                </constraints>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lHX-4P-3rw">
+                                <rect key="frame" x="240" y="180" width="64" height="34"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="34" id="CH6-5x-ml2"/>
+                                    <constraint firstAttribute="width" constant="64" id="M8X-Z4-nO6"/>
+                                </constraints>
+                                <state key="normal" title="马上开始">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                            </button>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="yDQ-rc-T61">
+                                <rect key="frame" x="0.0" y="274" width="320" height="294"/>
+                                <color key="backgroundColor" red="1" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mGG-Gj-V2d">
+                                <rect key="frame" x="0.0" y="224" width="320" height="50"/>
+                                <color key="backgroundColor" red="0.45490199329999997" green="0.90588241820000004" blue="0.33333334329999997" alpha="1" colorSpace="deviceRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="fDk-hV-7DK"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="yDQ-rc-T61" secondAttribute="trailing" id="4on-Ad-Jvu"/>
+                            <constraint firstItem="mGG-Gj-V2d" firstAttribute="leading" secondItem="a74-tr-D3O" secondAttribute="leading" id="671-xy-nGw"/>
+                            <constraint firstItem="cVg-07-G9G" firstAttribute="top" secondItem="1fD-Bd-CHa" secondAttribute="bottom" id="8O2-Mw-S3V"/>
+                            <constraint firstItem="lHX-4P-3rw" firstAttribute="trailing" secondItem="cVg-07-G9G" secondAttribute="trailing" constant="-16" id="M8g-cG-bxL"/>
+                            <constraint firstAttribute="trailing" secondItem="mGG-Gj-V2d" secondAttribute="trailing" id="SaW-Nc-syB"/>
+                            <constraint firstItem="Bfc-E8-FlC" firstAttribute="top" secondItem="yDQ-rc-T61" secondAttribute="bottom" id="T87-HB-UId"/>
+                            <constraint firstItem="mGG-Gj-V2d" firstAttribute="top" secondItem="cVg-07-G9G" secondAttribute="bottom" id="ZGi-dV-uBe"/>
+                            <constraint firstItem="lHX-4P-3rw" firstAttribute="bottom" secondItem="cVg-07-G9G" secondAttribute="bottom" constant="-10" id="gyO-Et-5Gi"/>
+                            <constraint firstAttribute="trailing" secondItem="cVg-07-G9G" secondAttribute="trailing" id="icY-kp-JbP"/>
+                            <constraint firstItem="yDQ-rc-T61" firstAttribute="leading" secondItem="a74-tr-D3O" secondAttribute="leading" id="raD-CG-q1b"/>
+                            <constraint firstItem="cVg-07-G9G" firstAttribute="leading" secondItem="a74-tr-D3O" secondAttribute="leading" id="rcm-Sw-Py6"/>
+                            <constraint firstItem="yDQ-rc-T61" firstAttribute="top" secondItem="mGG-Gj-V2d" secondAttribute="bottom" id="yph-Fy-lKe"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title=" 围住神经猫" id="UTy-DN-BwE"/>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
+                    <connections>
+                        <outlet property="bottomView" destination="yDQ-rc-T61" id="5tT-qP-e1z"/>
+                        <outlet property="topSwitchBg" destination="mGG-Gj-V2d" id="K8U-PT-qcz"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="QFe-5w-Z8r" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="96" y="469"/>
         </scene>
     </scenes>
 </document>

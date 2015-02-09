@@ -7,13 +7,19 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5503F7D30E2822E0D864C5E8 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 335958E708DB60BF797CFA76 /* libPods.a */; };
 		8D6F55B81A8846BF00E188C7 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 8D6F55B71A8846BF00E188C7 /* main.m */; };
 		8D6F55BB1A8846BF00E188C7 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 8D6F55BA1A8846BF00E188C7 /* AppDelegate.m */; };
-		8D6F55BE1A8846BF00E188C7 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8D6F55BD1A8846BF00E188C7 /* ViewController.m */; };
 		8D6F55C11A8846BF00E188C7 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8D6F55BF1A8846BF00E188C7 /* Main.storyboard */; };
 		8D6F55C31A8846BF00E188C7 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8D6F55C21A8846BF00E188C7 /* Images.xcassets */; };
 		8D6F55C61A8846BF00E188C7 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8D6F55C41A8846BF00E188C7 /* LaunchScreen.xib */; };
 		8D6F55D21A8846BF00E188C7 /* GameBoxTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 8D6F55D11A8846BF00E188C7 /* GameBoxTests.m */; };
+		8D6F55DD1A884D1900E188C7 /* IndexViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8D6F55DC1A884D1900E188C7 /* IndexViewController.m */; };
+		8D6F55E51A8855F400E188C7 /* EZSegmentView.m in Sources */ = {isa = PBXBuildFile; fileRef = 8D6F55E41A8855F400E188C7 /* EZSegmentView.m */; };
+		8D6F55EB1A8880B300E188C7 /* EZCollectionVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 8D6F55EA1A8880B300E188C7 /* EZCollectionVC.m */; };
+		8D6F55F41A888E7D00E188C7 /* EZCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 8D6F55F21A888E7D00E188C7 /* EZCollectionViewCell.m */; };
+		8D6F55F51A888E7D00E188C7 /* EZCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8D6F55F31A888E7D00E188C7 /* EZCollectionViewCell.xib */; };
+		8D6F55F81A88B35D00E188C7 /* EZAppHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 8D6F55F71A88B35D00E188C7 /* EZAppHelper.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -27,19 +33,33 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		335958E708DB60BF797CFA76 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		8D6F55B21A8846BF00E188C7 /* GameBox.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GameBox.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8D6F55B61A8846BF00E188C7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8D6F55B71A8846BF00E188C7 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		8D6F55B91A8846BF00E188C7 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		8D6F55BA1A8846BF00E188C7 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		8D6F55BC1A8846BF00E188C7 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		8D6F55BD1A8846BF00E188C7 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		8D6F55C01A8846BF00E188C7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		8D6F55C21A8846BF00E188C7 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		8D6F55C51A8846BF00E188C7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
 		8D6F55CB1A8846BF00E188C7 /* GameBoxTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = GameBoxTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		8D6F55D01A8846BF00E188C7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8D6F55D11A8846BF00E188C7 /* GameBoxTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GameBoxTests.m; sourceTree = "<group>"; };
+		8D6F55DB1A884D1900E188C7 /* IndexViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IndexViewController.h; sourceTree = "<group>"; };
+		8D6F55DC1A884D1900E188C7 /* IndexViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IndexViewController.m; sourceTree = "<group>"; };
+		8D6F55E31A8855F400E188C7 /* EZSegmentView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EZSegmentView.h; sourceTree = "<group>"; };
+		8D6F55E41A8855F400E188C7 /* EZSegmentView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EZSegmentView.m; sourceTree = "<group>"; };
+		8D6F55E71A885A6E00E188C7 /* AppConfig.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppConfig.h; sourceTree = "<group>"; };
+		8D6F55E81A885AA400E188C7 /* GameBox.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GameBox.pch; sourceTree = "<group>"; };
+		8D6F55E91A8880B300E188C7 /* EZCollectionVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EZCollectionVC.h; sourceTree = "<group>"; };
+		8D6F55EA1A8880B300E188C7 /* EZCollectionVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EZCollectionVC.m; sourceTree = "<group>"; };
+		8D6F55F11A888E7D00E188C7 /* EZCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EZCollectionViewCell.h; sourceTree = "<group>"; };
+		8D6F55F21A888E7D00E188C7 /* EZCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EZCollectionViewCell.m; sourceTree = "<group>"; };
+		8D6F55F31A888E7D00E188C7 /* EZCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = EZCollectionViewCell.xib; sourceTree = "<group>"; };
+		8D6F55F61A88B35D00E188C7 /* EZAppHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EZAppHelper.h; sourceTree = "<group>"; };
+		8D6F55F71A88B35D00E188C7 /* EZAppHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EZAppHelper.m; sourceTree = "<group>"; };
+		F7CFCCA99EB3491E6C339554 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
+		F9E5CE8DED8CCAECD85BDE34 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -47,6 +67,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5503F7D30E2822E0D864C5E8 /* libPods.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -66,6 +87,8 @@
 				8D6F55B41A8846BF00E188C7 /* GameBox */,
 				8D6F55CE1A8846BF00E188C7 /* GameBoxTests */,
 				8D6F55B31A8846BF00E188C7 /* Products */,
+				99DD01EDDA03CAA5F222DE59 /* Pods */,
+				C8B6F599D0C4D540DE27216E /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -81,10 +104,11 @@
 		8D6F55B41A8846BF00E188C7 /* GameBox */ = {
 			isa = PBXGroup;
 			children = (
+				8D6F55E61A885A5E00E188C7 /* Apps */,
+				8D6F55DE1A884D2100E188C7 /* Classes */,
+				8D6F55DF1A88554B00E188C7 /* Views */,
 				8D6F55B91A8846BF00E188C7 /* AppDelegate.h */,
 				8D6F55BA1A8846BF00E188C7 /* AppDelegate.m */,
-				8D6F55BC1A8846BF00E188C7 /* ViewController.h */,
-				8D6F55BD1A8846BF00E188C7 /* ViewController.m */,
 				8D6F55BF1A8846BF00E188C7 /* Main.storyboard */,
 				8D6F55C21A8846BF00E188C7 /* Images.xcassets */,
 				8D6F55C41A8846BF00E188C7 /* LaunchScreen.xib */,
@@ -96,6 +120,7 @@
 		8D6F55B51A8846BF00E188C7 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				8D6F55E81A885AA400E188C7 /* GameBox.pch */,
 				8D6F55B61A8846BF00E188C7 /* Info.plist */,
 				8D6F55B71A8846BF00E188C7 /* main.m */,
 			);
@@ -119,6 +144,56 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
+		8D6F55DE1A884D2100E188C7 /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				8D6F55DB1A884D1900E188C7 /* IndexViewController.h */,
+				8D6F55DC1A884D1900E188C7 /* IndexViewController.m */,
+				8D6F55E91A8880B300E188C7 /* EZCollectionVC.h */,
+				8D6F55EA1A8880B300E188C7 /* EZCollectionVC.m */,
+			);
+			name = Classes;
+			sourceTree = "<group>";
+		};
+		8D6F55DF1A88554B00E188C7 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				8D6F55E31A8855F400E188C7 /* EZSegmentView.h */,
+				8D6F55E41A8855F400E188C7 /* EZSegmentView.m */,
+				8D6F55F11A888E7D00E188C7 /* EZCollectionViewCell.h */,
+				8D6F55F21A888E7D00E188C7 /* EZCollectionViewCell.m */,
+				8D6F55F31A888E7D00E188C7 /* EZCollectionViewCell.xib */,
+			);
+			name = Views;
+			sourceTree = "<group>";
+		};
+		8D6F55E61A885A5E00E188C7 /* Apps */ = {
+			isa = PBXGroup;
+			children = (
+				8D6F55E71A885A6E00E188C7 /* AppConfig.h */,
+				8D6F55F61A88B35D00E188C7 /* EZAppHelper.h */,
+				8D6F55F71A88B35D00E188C7 /* EZAppHelper.m */,
+			);
+			name = Apps;
+			sourceTree = "<group>";
+		};
+		99DD01EDDA03CAA5F222DE59 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				F9E5CE8DED8CCAECD85BDE34 /* Pods.debug.xcconfig */,
+				F7CFCCA99EB3491E6C339554 /* Pods.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		C8B6F599D0C4D540DE27216E /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				335958E708DB60BF797CFA76 /* libPods.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -126,9 +201,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 8D6F55D51A8846BF00E188C7 /* Build configuration list for PBXNativeTarget "GameBox" */;
 			buildPhases = (
+				422E6CD64E6E8C9918180A01 /* Check Pods Manifest.lock */,
 				8D6F55AE1A8846BF00E188C7 /* Sources */,
 				8D6F55AF1A8846BF00E188C7 /* Frameworks */,
 				8D6F55B01A8846BF00E188C7 /* Resources */,
+				3C81E056B34A42372EDB317C /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -168,6 +245,11 @@
 				TargetAttributes = {
 					8D6F55B11A8846BF00E188C7 = {
 						CreatedOnToolsVersion = 6.1;
+						SystemCapabilities = {
+							com.apple.BackgroundModes = {
+								enabled = 1;
+							};
+						};
 					};
 					8D6F55CA1A8846BF00E188C7 = {
 						CreatedOnToolsVersion = 6.1;
@@ -202,6 +284,7 @@
 				8D6F55C11A8846BF00E188C7 /* Main.storyboard in Resources */,
 				8D6F55C61A8846BF00E188C7 /* LaunchScreen.xib in Resources */,
 				8D6F55C31A8846BF00E188C7 /* Images.xcassets in Resources */,
+				8D6F55F51A888E7D00E188C7 /* EZCollectionViewCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -214,14 +297,51 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		3C81E056B34A42372EDB317C /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods/Pods-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		422E6CD64E6E8C9918180A01 /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		8D6F55AE1A8846BF00E188C7 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8D6F55BE1A8846BF00E188C7 /* ViewController.m in Sources */,
 				8D6F55BB1A8846BF00E188C7 /* AppDelegate.m in Sources */,
 				8D6F55B81A8846BF00E188C7 /* main.m in Sources */,
+				8D6F55EB1A8880B300E188C7 /* EZCollectionVC.m in Sources */,
+				8D6F55F41A888E7D00E188C7 /* EZCollectionViewCell.m in Sources */,
+				8D6F55DD1A884D1900E188C7 /* IndexViewController.m in Sources */,
+				8D6F55F81A88B35D00E188C7 /* EZAppHelper.m in Sources */,
+				8D6F55E51A8855F400E188C7 /* EZSegmentView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -343,9 +463,14 @@
 		};
 		8D6F55D61A8846BF00E188C7 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = F9E5CE8DED8CCAECD85BDE34 /* Pods.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = GameBox/GameBox.pch;
 				INFOPLIST_FILE = GameBox/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
@@ -353,9 +478,14 @@
 		};
 		8D6F55D71A8846BF00E188C7 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = F7CFCCA99EB3491E6C339554 /* Pods.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = GameBox/GameBox.pch;
 				INFOPLIST_FILE = GameBox/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
@@ -414,6 +544,7 @@
 				8D6F55D71A8846BF00E188C7 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		8D6F55D81A8846BF00E188C7 /* Build configuration list for PBXNativeTarget "GameBoxTests" */ = {
 			isa = XCConfigurationList;
@@ -422,6 +553,7 @@
 				8D6F55DA1A8846BF00E188C7 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
