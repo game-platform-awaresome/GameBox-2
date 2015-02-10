@@ -8,6 +8,10 @@
 
 /* Begin PBXBuildFile section */
 		5503F7D30E2822E0D864C5E8 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 335958E708DB60BF797CFA76 /* libPods.a */; };
+		8D1A5C831A89AA2D00D73CE7 /* EZPlayerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8D1A5C821A89AA2D00D73CE7 /* EZPlayerViewController.m */; };
+		8D1A5C861A8A071A00D73CE7 /* EZSquareImage.m in Sources */ = {isa = PBXBuildFile; fileRef = 8D1A5C851A8A071A00D73CE7 /* EZSquareImage.m */; };
+		8D1A5C8A1A8A208B00D73CE7 /* CustomURLCache.m in Sources */ = {isa = PBXBuildFile; fileRef = 8D1A5C891A8A208B00D73CE7 /* CustomURLCache.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		8D1A5C8D1A8A20B000D73CE7 /* Util.m in Sources */ = {isa = PBXBuildFile; fileRef = 8D1A5C8C1A8A20B000D73CE7 /* Util.m */; };
 		8D6F55B81A8846BF00E188C7 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 8D6F55B71A8846BF00E188C7 /* main.m */; };
 		8D6F55BB1A8846BF00E188C7 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 8D6F55BA1A8846BF00E188C7 /* AppDelegate.m */; };
 		8D6F55C11A8846BF00E188C7 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8D6F55BF1A8846BF00E188C7 /* Main.storyboard */; };
@@ -34,6 +38,14 @@
 
 /* Begin PBXFileReference section */
 		335958E708DB60BF797CFA76 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		8D1A5C811A89AA2D00D73CE7 /* EZPlayerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EZPlayerViewController.h; sourceTree = "<group>"; };
+		8D1A5C821A89AA2D00D73CE7 /* EZPlayerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EZPlayerViewController.m; sourceTree = "<group>"; };
+		8D1A5C841A8A071A00D73CE7 /* EZSquareImage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EZSquareImage.h; sourceTree = "<group>"; };
+		8D1A5C851A8A071A00D73CE7 /* EZSquareImage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EZSquareImage.m; sourceTree = "<group>"; };
+		8D1A5C881A8A208B00D73CE7 /* CustomURLCache.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CustomURLCache.h; sourceTree = "<group>"; };
+		8D1A5C891A8A208B00D73CE7 /* CustomURLCache.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CustomURLCache.m; sourceTree = "<group>"; };
+		8D1A5C8B1A8A20B000D73CE7 /* Util.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Util.h; sourceTree = "<group>"; };
+		8D1A5C8C1A8A20B000D73CE7 /* Util.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Util.m; sourceTree = "<group>"; };
 		8D6F55B21A8846BF00E188C7 /* GameBox.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GameBox.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8D6F55B61A8846BF00E188C7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8D6F55B71A8846BF00E188C7 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -81,6 +93,17 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		8D1A5C871A8A207500D73CE7 /* URLCache */ = {
+			isa = PBXGroup;
+			children = (
+				8D1A5C8B1A8A20B000D73CE7 /* Util.h */,
+				8D1A5C8C1A8A20B000D73CE7 /* Util.m */,
+				8D1A5C881A8A208B00D73CE7 /* CustomURLCache.h */,
+				8D1A5C891A8A208B00D73CE7 /* CustomURLCache.m */,
+			);
+			name = URLCache;
+			sourceTree = "<group>";
+		};
 		8D6F55A91A8846BF00E188C7 = {
 			isa = PBXGroup;
 			children = (
@@ -104,8 +127,9 @@
 		8D6F55B41A8846BF00E188C7 /* GameBox */ = {
 			isa = PBXGroup;
 			children = (
-				8D6F55E61A885A5E00E188C7 /* Apps */,
+				8D1A5C871A8A207500D73CE7 /* URLCache */,
 				8D6F55DE1A884D2100E188C7 /* Classes */,
+				8D6F55E61A885A5E00E188C7 /* Apps */,
 				8D6F55DF1A88554B00E188C7 /* Views */,
 				8D6F55B91A8846BF00E188C7 /* AppDelegate.h */,
 				8D6F55BA1A8846BF00E188C7 /* AppDelegate.m */,
@@ -151,6 +175,8 @@
 				8D6F55DC1A884D1900E188C7 /* IndexViewController.m */,
 				8D6F55E91A8880B300E188C7 /* EZCollectionVC.h */,
 				8D6F55EA1A8880B300E188C7 /* EZCollectionVC.m */,
+				8D1A5C811A89AA2D00D73CE7 /* EZPlayerViewController.h */,
+				8D1A5C821A89AA2D00D73CE7 /* EZPlayerViewController.m */,
 			);
 			name = Classes;
 			sourceTree = "<group>";
@@ -158,6 +184,8 @@
 		8D6F55DF1A88554B00E188C7 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				8D1A5C841A8A071A00D73CE7 /* EZSquareImage.h */,
+				8D1A5C851A8A071A00D73CE7 /* EZSquareImage.m */,
 				8D6F55E31A8855F400E188C7 /* EZSegmentView.h */,
 				8D6F55E41A8855F400E188C7 /* EZSegmentView.m */,
 				8D6F55F11A888E7D00E188C7 /* EZCollectionViewCell.h */,
@@ -336,11 +364,15 @@
 			buildActionMask = 2147483647;
 			files = (
 				8D6F55BB1A8846BF00E188C7 /* AppDelegate.m in Sources */,
+				8D1A5C8A1A8A208B00D73CE7 /* CustomURLCache.m in Sources */,
 				8D6F55B81A8846BF00E188C7 /* main.m in Sources */,
+				8D1A5C861A8A071A00D73CE7 /* EZSquareImage.m in Sources */,
 				8D6F55EB1A8880B300E188C7 /* EZCollectionVC.m in Sources */,
 				8D6F55F41A888E7D00E188C7 /* EZCollectionViewCell.m in Sources */,
 				8D6F55DD1A884D1900E188C7 /* IndexViewController.m in Sources */,
 				8D6F55F81A88B35D00E188C7 /* EZAppHelper.m in Sources */,
+				8D1A5C8D1A8A20B000D73CE7 /* Util.m in Sources */,
+				8D1A5C831A89AA2D00D73CE7 /* EZPlayerViewController.m in Sources */,
 				8D6F55E51A8855F400E188C7 /* EZSegmentView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
+	<false/>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>E2BB2F69-1648-4217-AAD4-6260E03DC690</string>
+	<key>IDESourceControlProjectName</key>
+	<string>GameBox</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>B5981D14974C52EE1EAAFDD7EB81E2388C4A35D9</key>
+		<string>github.com:qyzhaojinxi/GameBox</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>GameBox.xcworkspace</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>B5981D14974C52EE1EAAFDD7EB81E2388C4A35D9</key>
+		<string>..</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>github.com:qyzhaojinxi/GameBox</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>111</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>B5981D14974C52EE1EAAFDD7EB81E2388C4A35D9</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>B5981D14974C52EE1EAAFDD7EB81E2388C4A35D9</string>
+			<key>IDESourceControlWCCName</key>
+			<string>GameBox</string>
+		</dict>
+	</array>
+</dict>
+</plist>

@@ -10,6 +10,22 @@
 #import "EZSegmentView.h"
 #import "EZCollectionVC.h"
 @interface IndexViewController : UIViewController<EZSegmentDelegate>
+{
+
+
+    EZCollectionVC *recommendCollection;
+    
+    
+    EZCollectionVC *newCollection;
+    
+    
+    
+    EZCollectionVC *hotCollection;
+
+   
+
+
+}
 @property (weak, nonatomic) IBOutlet UIView *topSwitchBg;
 @property(strong,nonatomic)EZSegmentView *mSegmentView;
 @property (weak, nonatomic) IBOutlet UIView *bottomView;

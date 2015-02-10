@@ -11,4 +11,6 @@
 @interface EZAppHelper : NSObject
 @property(nonatomic,strong)NSMutableArray *history_record;
 +(EZAppHelper *)shareAppHelper;
+-(void)addHistoryWithDic:(NSDictionary *)item;
+-(NSDictionary *)happy_base64_decode:(NSString *)source;
 @end

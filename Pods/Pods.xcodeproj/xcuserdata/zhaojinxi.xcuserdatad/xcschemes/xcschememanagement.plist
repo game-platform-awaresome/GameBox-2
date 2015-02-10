@@ -9,7 +9,22 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
+		<key>Pods-Base64.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 		<key>Pods-MJRefresh.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>Pods-SDWebImage.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>Pods-ZipArchive.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
@@ -22,17 +37,32 @@
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
-		<key>44003EFD60FD9E40233E910C</key>
+		<key>00157BAB786686ECC6326D6A</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>720C831EC42C00963FB7A2CA</key>
+		<key>21A8552E0055988D1B362BCE</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>AE46451578130E99461DC8A5</key>
+		<key>766E56BE94C56D5810231B74</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>902D5851E8589C68AAD54064</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>E61059C42471AE5B76B66354</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>EB299396903F5EDAACF5C446</key>
 		<dict>
 			<key>primary</key>
 			<true/>

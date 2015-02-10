@@ -13,5 +13,5 @@
 @property (weak, nonatomic) IBOutlet UILabel *titleLbl;
 @property (weak, nonatomic) IBOutlet UILabel *infoLbl;
 @property (weak, nonatomic) IBOutlet UIButton *playButton;
-
+-(void)setInfo:(NSDictionary *)item;
 @end

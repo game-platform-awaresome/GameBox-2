@@ -18,7 +18,12 @@ typedef enum{
 {
 
     int mPage;
+    
+    
+    
+    NSMutableArray *mItems;
 
 }
 @property(assign,nonatomic)EZCollectionType mType;
+-(instancetype)initWithCollectionViewLayout:(UICollectionViewLayout *)layout AndType:(EZCollectionType)type;
 @end

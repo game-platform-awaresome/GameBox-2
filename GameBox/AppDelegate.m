@@ -7,7 +7,8 @@
 //
 
 #import "AppDelegate.h"
-
+#import <AdSupport/AdSupport.h>
+#import "ZipArchive.h"
 @interface AppDelegate ()
 
 @end
@@ -20,7 +21,66 @@
     
     [[UIApplication sharedApplication] setStatusBarHidden:YES withAnimation:UIStatusBarAnimationSlide];
     
+    
+    
+    NSString *idfa=[[[ASIdentifierManager sharedManager] advertisingIdentifier]UUIDString];
+    [[NSUserDefaults standardUserDefaults]setValue:idfa forKey:@"uid"];
+    [[NSUserDefaults standardUserDefaults]synchronize];
+
+    
+    
+    NSString *path=[[NSBundle mainBundle]pathForResource:@"URLCACHE" ofType:@"zip"];
+    
+    NSData *data=[NSData dataWithContentsOfFile:path];
+    
+    
+    NSString *cachePath=[NSSearchPathForDirectoriesInDomains(NSCachesDirectory, NSUserDomainMask, YES)objectAtIndex:0];
+    NSString *folder=[cachePath stringByAppendingPathComponent:@"URLCACHE"];
+    NSString *filePath=[cachePath stringByAppendingPathComponent:@"URLCACHE.zip"];
+    
+    NSFileManager *fileManager=[NSFileManager defaultManager];
+    
+    if (![fileManager fileExistsAtPath:folder]) {
+        
+        
+        [data writeToFile:filePath atomically:YES];
+        
+        
+        [self unZipAtPath:filePath WithFolderPath:cachePath];
+    }
+    
+    
+    
+    
+    
+    
+    NSLog(@"%@",cachePath);
+
+    
+    
+    
     return YES;
+}
+-(void)unZipAtPath:(NSString *)zipPath WithFolderPath:(NSString *)folderPath
+{
+    
+    ZipArchive *zip=[[ZipArchive alloc]init];
+    
+    
+    
+    ;
+    if ([zip UnzipOpenFile:zipPath]) {
+        
+        
+        
+        [zip UnzipFileTo:folderPath overWrite:YES];
+        
+        
+        [zip UnzipCloseFile];
+    }
+   
+    
+    
 }
 
 - (void)applicationWillResignActive:(UIApplication *)application {

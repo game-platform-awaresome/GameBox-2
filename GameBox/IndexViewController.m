@@ -35,7 +35,7 @@
 
  [self.topSwitchBg layoutIfNeeded];
 
-    self.mSegmentView=[[EZSegmentView alloc]initWithImageItems:@[@"btn_contact",@"huangye",@"wode"] selectedImageItems:@[@"btn_contact_hig",@"huangye_hig",@"wode_hig"] andBackground:nil];
+    self.mSegmentView=[[EZSegmentView alloc]initWithImageItems:@[@"tuijian",@"zuixin",@"zuire"] selectedImageItems:@[@"tuijian_high",@"zuixin_high",@"zuire_high"] andBackground:nil];
 
     [self.topSwitchBg addSubview:self.mSegmentView];
     _mSegmentView.delegate=self;
@@ -50,6 +50,84 @@
     NSLog(@"%@:%ld",NSStringFromSelector(_cmd),(long)sender.tag);
 
 
+    //NSLog(@"触摸了%d",tag);
+    
+    recommendCollection.view.hidden=YES;
+    newCollection.view.hidden=YES;
+    hotCollection.view.hidden=YES;
+    
+    
+    switch (sender.tag) {
+        case 1000:
+            recommendCollection.view.hidden=NO;
+            break;
+        case 1001:
+            if (newCollection==nil) {
+                
+                
+                UICollectionViewFlowLayout * Layout=[[UICollectionViewFlowLayout alloc]init];
+                
+                Layout.itemSize=CGSizeMake((SCREEN_WIDTH-16)/2, 102);
+                Layout.scrollDirection=UICollectionViewScrollDirectionVertical;
+                
+                Layout.minimumInteritemSpacing=2;
+                Layout.minimumLineSpacing=2;
+                
+                
+                Layout.sectionInset=UIEdgeInsetsMake(7, 7, 7, 7);
+
+
+                newCollection=[[EZCollectionVC alloc]initWithCollectionViewLayout:Layout AndType:EZCollectionTypeNew];
+                
+                newCollection.view.frame=CGRectMake(0, 0, self.bottomView.frame.size.width, self.bottomView.frame.size.height);
+            
+                [self addChildViewController:newCollection];
+                
+                [_bottomView addSubview:newCollection.view];
+                
+                
+                
+                newCollection.view.hidden=YES;
+            }
+            newCollection.view.hidden=NO;
+            break;
+        case 1002:
+            if (hotCollection==nil) {
+                
+                
+                
+                UICollectionViewFlowLayout * Layout=[[UICollectionViewFlowLayout alloc]init];
+                
+                
+                Layout.itemSize=CGSizeMake((SCREEN_WIDTH-20)/2, 100);
+                Layout.scrollDirection=UICollectionViewScrollDirectionVertical;
+                
+                Layout.minimumInteritemSpacing=4;
+                
+                Layout.sectionInset=UIEdgeInsetsMake(7, 7, 2, 7);
+
+                hotCollection=[[EZCollectionVC alloc]initWithCollectionViewLayout:Layout AndType:EZCollectionTypeHot];
+                hotCollection.mType=EZCollectionTypeHot;
+                hotCollection.view.frame=CGRectMake(0, 0, self.bottomView.frame.size.width, self.bottomView.frame.size.height);
+                
+                [self addChildViewController:hotCollection];
+                
+                [_bottomView addSubview:hotCollection.view];
+                
+                
+                
+                
+                hotCollection.view.hidden=YES;
+                
+                
+            }
+            hotCollection.view.hidden=NO;
+            break;
+        default:
+            break;
+    }
+    
+    
 
 
 
@@ -69,22 +147,51 @@
     
     
     
-    UICollectionViewFlowLayout *layout=[[UICollectionViewFlowLayout alloc]init];
+   UICollectionViewFlowLayout * Layout=[[UICollectionViewFlowLayout alloc]init];
     
     
-    layout.itemSize=CGSizeMake((SCREEN_WIDTH-40)/2, 90);
-    layout.scrollDirection=UICollectionViewScrollDirectionVertical;
+    Layout.itemSize=CGSizeMake((SCREEN_WIDTH-20)/2, 100);
+    Layout.scrollDirection=UICollectionViewScrollDirectionVertical;
     
-    layout.minimumInteritemSpacing=20;
+    Layout.minimumInteritemSpacing=4;
     
-    layout.sectionInset=UIEdgeInsetsMake(10, 10, 10, 10);
-    EZCollectionVC *collection=[[EZCollectionVC alloc]initWithCollectionViewLayout:layout];
+    Layout.sectionInset=UIEdgeInsetsMake(7, 7, 2, 7);
     
-    collection.view.frame=CGRectMake(0, 0, self.bottomView.frame.size.width, self.bottomView.frame.size.height);
     
-    [self addChildViewController:collection];
     
-    [_bottomView addSubview:collection.view];
+    
+    
+    
+    recommendCollection=[[EZCollectionVC alloc]initWithCollectionViewLayout:Layout AndType:EZCollectionTypeRecommend];
+    recommendCollection.mType=EZCollectionTypeRecommend;
+    recommendCollection.view.frame=CGRectMake(0, 0, self.bottomView.frame.size.width, self.bottomView.frame.size.height);
+    
+    [self addChildViewController:recommendCollection];
+    
+    [_bottomView addSubview:recommendCollection.view];
+    
+    
+    
+    
+//    newCollection=[[EZCollectionVC alloc]initWithCollectionViewLayout:mLayout];
+//    
+//    newCollection.view.frame=CGRectMake(0, 0, self.bottomView.frame.size.width, self.bottomView.frame.size.height);
+//    newCollection.mType=EZCollectionTypeNew;
+//    [self addChildViewController:newCollection];
+//    
+//    [_bottomView addSubview:newCollection.view];
+//
+//    
+//    
+//    
+//    hotCollection=[[EZCollectionVC alloc]initWithCollectionViewLayout:mLayout];
+//    hotCollection.mType=EZCollectionTypeHot;
+//    hotCollection.view.frame=CGRectMake(0, 0, self.bottomView.frame.size.width, self.bottomView.frame.size.height);
+//    
+//    [self addChildViewController:hotCollection];
+//    
+//    [_bottomView addSubview:hotCollection.view];
+
 
 
 
@@ -94,6 +201,13 @@
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
+
+
+
+
+
+
+
 
 /*
 #pragma mark - Navigation
