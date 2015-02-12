@@ -84,9 +84,39 @@ static EZAppHelper *helper;
 
 -(void)addHistoryWithDic:(NSDictionary *)item
 {
+    
+    
+    
+  
+    
+    for (int i=0; i<_history_record.count; i++) {
+        
+        if ([[_history_record[i]objectForKey:@"serial"] isEqualToString:[item objectForKey:@"serial"]]) {
+            
+            
+            
+              [_history_record removeObjectAtIndex:i];
+            
+            
+            break;
+        }
+        
+        
+    }
+    
+    
 
     
-    [_history_record removeObject:item];
+  
+    
+    
+   
+    
+    
+    
+    
+    
+    
     
     
 
@@ -98,7 +128,8 @@ static EZAppHelper *helper;
     
     [self saveItemsToFile:_history_record cacheId:@"history"];
 
-
+    [[NSNotificationCenter defaultCenter]postNotificationName:@"history" object:nil];
+    
 
 }
 

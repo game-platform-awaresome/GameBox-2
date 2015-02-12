@@ -23,10 +23,13 @@
     EZCollectionVC *hotCollection;
 
    
+    NSDictionary *mainGame;
 
 
 }
 @property (weak, nonatomic) IBOutlet UIView *topSwitchBg;
 @property(strong,nonatomic)EZSegmentView *mSegmentView;
 @property (weak, nonatomic) IBOutlet UIView *bottomView;
+- (IBAction)goToSearch:(UIButton *)sender;
+- (IBAction)playNow:(UIButton *)sender;
 @end

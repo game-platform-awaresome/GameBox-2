@@ -9,6 +9,7 @@
 #import "EZPlayerViewController.h"
 #import <AdSupport/AdSupport.h>
 #import "CustomURLCache.h"
+#import "UMSocial.h"
 @interface EZPlayerViewController ()
 
 @end
@@ -30,13 +31,41 @@
     return self;
 
 }
+-(void)viewWillDisappear:(BOOL)animated
+{
+
+
+    [super viewWillDisappear:animated];
+    
+    
+    
+    [mPlayer stop];
+
+
+}
+
 -(void)dealloc
 {
 
     self.webView=nil;
+    
+    
+    if (mPlayer) {
+        
+        
+        [mPlayer stop];
+        
+        
+        mPlayer=nil;
 
+        
+    }
+    
+   
 
 }
+
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     
@@ -45,11 +74,29 @@
     
   
     
-    
+    self.webView.scrollView.bounces=NO;
     
   
     
     gameUrl=[_myItem objectForKey:@"play_url"];
+    
+    
+    
+    if ([_myItem objectForKey:@"sound"]&&![[_myItem objectForKey:@"sound"] isEqualToString:@""]) {
+        
+        
+        
+        [self playMusicWithData];
+        
+        
+        
+    }
+    
+    
+    
+    
+    
+    
     
     
     [self.webView loadRequest:[NSURLRequest requestWithURL:[NSURL URLWithString:gameUrl]]];
@@ -121,4 +168,87 @@
     [self dismissViewControllerAnimated:YES completion:nil];
     
 }
+
+
+-(void)playMusicWithData
+{
+
+
+
+
+
+    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
+    
+    
+    
+        
+        NSData *data=[NSData dataWithContentsOfURL:[NSURL URLWithString:[_myItem objectForKey:@"sound"]]];
+        
+    
+        dispatch_async(dispatch_get_main_queue(), ^{
+        
+        
+        
+        
+            mPlayer=[[AVAudioPlayer alloc]initWithData:data error:nil];
+            
+            mPlayer.delegate=self;
+            [mPlayer prepareToPlay];
+            [mPlayer play];
+            
+            
+        
+        
+        
+        
+        });
+    
+    
+    
+    
+    
+    
+    });
+
+
+
+
+
+
+
+}
+
+-(void)audioPlayerDidFinishPlaying:(AVAudioPlayer *)player successfully:(BOOL)flag
+{
+
+
+    if (flag) {
+        
+        
+        [player play];
+        
+    }
+    
+
+
+
+}
+- (IBAction)shareTo:(UIButton *)sender {
+    
+    
+    NSString * content = [NSString stringWithFormat:@"%@，年度最好玩的小游戏，打发时间必备，快来玩吧。\r\n%@",[[[NSBundle mainBundle] infoDictionary] objectForKey:@"CFBundleName"],[NSString stringWithFormat:@"https://itunes.apple.com/cn/app/id%@?mt=8",APP_ID]];
+    [UMSocialSnsService presentSnsIconSheetView:self
+                                         appKey:UMENG_APP_SHARE_ID
+                                      shareText:content
+                                     shareImage:[UIImage imageNamed:@"Icon-60@3x"]
+                                shareToSnsNames:[NSArray arrayWithObjects:UMShareToWechatSession,UMShareToWechatTimeline,UMShareToSms,UMShareToEmail,nil]
+                                       delegate:nil];
+    [UMSocialData defaultData].extConfig.title = @"蜂狂连消";
+    
+    
+    
+    
+    
+}
+
 @end

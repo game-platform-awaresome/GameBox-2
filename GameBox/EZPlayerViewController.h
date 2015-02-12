@@ -7,16 +7,21 @@
 //
 
 #import <UIKit/UIKit.h>
-
-@interface EZPlayerViewController : UIViewController<UIWebViewDelegate>
+#import <AVFoundation/AVFoundation.h>
+@interface EZPlayerViewController : UIViewController<UIWebViewDelegate,AVAudioPlayerDelegate>
 {
 
     NSString *gameUrl;
     
     NSString *jsString;
+    
+    
+    
+    AVAudioPlayer *mPlayer;
 
 }
 @property (weak, nonatomic) IBOutlet UIWebView *webView;
 @property(strong,nonatomic)NSDictionary *myItem;
 - (IBAction)backToLast:(UIButton *)sender;
+- (IBAction)shareTo:(UIButton *)sender;
 @end

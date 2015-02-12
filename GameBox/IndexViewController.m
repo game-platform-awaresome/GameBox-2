@@ -7,7 +7,10 @@
 //
 
 #import "IndexViewController.h"
-
+#import "EZSearchViewController.h"
+#import "EZPlayerViewController.h"
+#import "EZAppHelper.h"
+#import "AFHTTPRequestOperationManager.h"
 @interface IndexViewController ()
 
 @end
@@ -17,7 +20,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    
+
     
     [self initSegmentView];
    
@@ -26,6 +29,13 @@
     
     
   
+  //  NSString *strMain=[NSString stringWithContentsOfFile: encoding:NSUTF8StringEncoding error:nil];
+    
+    
+    mainGame=[NSDictionary dictionaryWithContentsOfFile:[[NSBundle mainBundle]pathForResource:@"mainGame" ofType:@"txt"]];
+    
+    
+    
     
     // Do any additional setup after loading the view.
 }
@@ -36,7 +46,9 @@
  [self.topSwitchBg layoutIfNeeded];
 
     self.mSegmentView=[[EZSegmentView alloc]initWithImageItems:@[@"tuijian",@"zuixin",@"zuire"] selectedImageItems:@[@"tuijian_high",@"zuixin_high",@"zuire_high"] andBackground:nil];
-
+    self.mSegmentView.frame=CGRectMake(0, 0, SCREEN_WIDTH, 39);
+    
+    
     [self.topSwitchBg addSubview:self.mSegmentView];
     _mSegmentView.delegate=self;
 
@@ -218,5 +230,106 @@
     // Pass the selected object to the new view controller.
 }
 */
+
+- (IBAction)goToSearch:(UIButton *)sender {
+    
+    
+    EZSearchViewController *search=[self.storyboard instantiateViewControllerWithIdentifier:@"EZSearchViewController"];
+    
+    
+    [self.navigationController pushViewController:search animated:YES];
+
+    
+    
+    
+}
+
+- (IBAction)playNow:(UIButton *)sender {
+    
+    
+    
+    
+    
+    
+    EZPlayerViewController *player=[self.storyboard instantiateViewControllerWithIdentifier:@"EZPlayerViewController"];
+    
+    
+    UINavigationController *nav=[[UINavigationController alloc]initWithRootViewController:player];
+    
+    
+    
+    [self addHitsWithGameID:[mainGame objectForKey:@"serial"]];
+    
+    
+    player.myItem=mainGame;
+    
+    
+    [self presentViewController:nav animated:YES completion:^{
+        
+        [[EZAppHelper shareAppHelper]addHistoryWithDic:mainGame];
+        
+        
+        
+    }];
+    
+
+    
+    
+    
+    
+    
+    
+}
+
+
+
+-(void)addHitsWithGameID:(NSString *)gameID
+{
+    
+    
+    
+    
+    
+    
+    AFHTTPRequestOperationManager *manager=[AFHTTPRequestOperationManager manager];
+    
+    [manager setRequestSerializer:[AFJSONRequestSerializer serializerWithWritingOptions:NSJSONWritingPrettyPrinted]];
+    [manager setResponseSerializer:[AFHTTPResponseSerializer serializer]];
+    manager.responseSerializer.acceptableContentTypes=[NSSet setWithObjects:@"text/html", nil];
+    
+    [manager GET:[NSString stringWithFormat:@"http://93app.com/game/h5/proc/hits.php?ucode=%@&version=%@&serial=%@",UID,VERSION,gameID] parameters:nil success:^(AFHTTPRequestOperation *operation, id responseObject) {
+        
+        
+        
+        NSDictionary *dic=[[EZAppHelper shareAppHelper]happy_base64_decode:[[NSString alloc]initWithData:(NSData *)responseObject encoding:NSUTF8StringEncoding]];
+        
+        
+        NSLog(@"%@:%@",NSStringFromSelector(_cmd),dic);
+        
+        if ([dic objectForKey:@"status"]) {
+            
+            
+            
+            
+            
+        }
+        
+        
+    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+        
+        
+        
+        
+        
+        
+        
+    }];
+    
+    
+    
+    
+    
+    
+}
 
 @end

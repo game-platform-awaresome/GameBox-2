@@ -12,6 +12,9 @@
 #import "EZPlayerViewController.h"
 #import "AFHTTPRequestOperationManager.h"
 #import "EZAppHelper.h"
+#import "EZSearchViewController.h"
+#import "SVProgressHUD.h"
+#import "CollectionReusableView.h"
 @interface EZCollectionVC ()
 
 @end
@@ -33,6 +36,20 @@ static NSString * const reuseIdentifier = @"Cell";
     return self;
 
 }
+-(void)dealloc
+{
+
+    if (_mType==EZCollectionTypeRecommend) {
+        [[NSNotificationCenter defaultCenter] removeObserver:self name:@"history" object:nil];
+        
+        
+        
+         }
+    
+
+   [[NSNotificationCenter defaultCenter] removeObserver:self name:@"remove" object:nil];
+
+}
 - (void)viewDidLoad {
     [super viewDidLoad];
     
@@ -49,11 +66,81 @@ static NSString * const reuseIdentifier = @"Cell";
     mPage=1;
     
     
-    [self refreshData];
+    if (_mType!=EZCollectionTypeSearch&&_mType!=EZCollectionTypeLoved) {
+        
+         [self refreshData];
+        
+    }
     
-    [self setRefresh];
+    if (_mType!=EZCollectionTypeLoved) {
+          [self setRefresh];
+    }
+  
+    
+    if (_mType==EZCollectionTypeRecommend) {
+        [[NSNotificationCenter defaultCenter]addObserver:self selector:@selector(reloadCollectionData) name:@"history" object:nil];
+       
+
+        
+        
+    }
+    
+     [[NSNotificationCenter defaultCenter]addObserver:self selector:@selector(clearHistory) name:@"remove" object:nil];
+    if (_mType==EZCollectionTypeLoved) {
+        
+        
+        
+        
+        mItems=[EZAppHelper shareAppHelper].history_record;
+        [self.collectionView reloadData];
+        
+        [self initNav];
+        
+        
+        
+        
+        
+        
+        
+        
+    }
+    UINib *headerNib = [UINib nibWithNibName:NSStringFromClass([CollectionReusableView class])  bundle:[NSBundle mainBundle]];
+    [self.collectionView registerNib:headerNib  forSupplementaryViewOfKind :UICollectionElementKindSectionHeader  withReuseIdentifier: @"title" ];  //注册加载头
+
     
     // Do any additional setup after loading the view.
+}
+
+-(void)reloadCollectionData
+{
+
+    
+    
+    
+    [self.collectionView reloadData];
+
+
+}
+
+//清除已关注
+-(void)clearHistory
+{
+
+    
+    
+    
+   
+    
+  
+
+    
+    
+    [self.collectionView reloadData];
+    
+    
+    
+    
+
 }
 -(void)refreshData
 {
@@ -78,26 +165,42 @@ static NSString * const reuseIdentifier = @"Cell";
     
     NSString *strUrl;
     
+    if (_mType!=EZCollectionTypeSearch) {
+        switch (_mType) {
+            case EZCollectionTypeRecommend:
+                
+                
+                
+                strUrl=[NSString stringWithFormat:temp,UID,VERSION,@"recommend",mPage];
+                
+                break;
+            case EZCollectionTypeNew:
+                strUrl=[NSString stringWithFormat:temp,UID,VERSION,@"new",mPage];
+                break;
+            case EZCollectionTypeHot:
+                strUrl=[NSString stringWithFormat:temp,UID,VERSION,@"hot",mPage];
+                break;
+                
+            default:
+                break;
+        }
+
+    }else
+    {
     
     
-    switch (_mType) {
-        case EZCollectionTypeRecommend:
-            
-            
-            
-            strUrl=[NSString stringWithFormat:temp,UID,VERSION,@"recommoned",mPage];
-            
-            break;
-        case EZCollectionTypeNew:
-            strUrl=[NSString stringWithFormat:temp,UID,VERSION,@"new",mPage];
-            break;
-        case EZCollectionTypeHot:
-            strUrl=[NSString stringWithFormat:temp,UID,VERSION,@"hot",mPage];
-            break;
-            
-        default:
-            break;
+        strUrl=[NSString stringWithFormat:@"http://93app.com/game/h5/search.php?ucode=%@&version=%@&keyword=%@&page=%d",UID,VERSION,_mKeyword,mPage];
+    
+        
+        strUrl=[strUrl stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
+        
+        
+    
     }
+    
+    
+    
+    
     
     
     
@@ -129,7 +232,17 @@ static NSString * const reuseIdentifier = @"Cell";
             }
             
             
-            NSArray *tempArray=[dic objectForKey:@"game_list"];
+            NSMutableArray *tempArray=[[dic objectForKey:@"game_list"] mutableCopy];
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
             
             
             if (mPage==1) {
@@ -138,10 +251,24 @@ static NSString * const reuseIdentifier = @"Cell";
                 [mItems removeAllObjects];
                 
                 
+                
+                
+                
+                
+                
             }
             
             
+            
+            
+            
             [mItems addObjectsFromArray:tempArray];
+
+            
+            
+
+            
+           
             
             
             [self.collectionView reloadData];
@@ -153,7 +280,11 @@ static NSString * const reuseIdentifier = @"Cell";
         
         
            
-        
+            if (mPage==1) {
+                [mItems removeAllObjects];
+                
+                [self.collectionView reloadData];
+            }
         
         
         
@@ -210,17 +341,98 @@ static NSString * const reuseIdentifier = @"Cell";
     // Pass the selected object to the new view controller.
 }
 */
+-(CGSize) collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout referenceSizeForHeaderInSection:(NSInteger)section {
+    
+    
+    if (_mType==EZCollectionTypeRecommend) {
+        
+        
+        if (section==0) {
+            
+            
+            if ([EZAppHelper shareAppHelper].history_record.count<=0) {
+                
+                
+                return CGSizeZero;;
+                
+                
+            }else
+            {
+               return CGSizeMake(SCREEN_WIDTH, 20.0f);
+                
+            }
 
-#pragma mark <UICollectionViewDataSource>
+            
+        }else
+        {
+        
+         return CGSizeMake(SCREEN_WIDTH, 20.0f);
+        
+        }
+        
+        
+       
+        
+    }
+    
+    
+    return CGSizeZero;
+    
+    
+}
+
+-(UICollectionReusableView *)collectionView:(UICollectionView *)collectionView viewForSupplementaryElementOfKind:(NSString *)kind atIndexPath:(NSIndexPath *)indexPath
+{
+    CollectionReusableView *view = [collectionView dequeueReusableSupplementaryViewOfKind:UICollectionElementKindSectionHeader withReuseIdentifier:@"title"forIndexPath:indexPath];
+    
+    
+    if (indexPath.section==0) {
+        
+        view.titleLbl.text = @"我玩过的";
+
+        
+    }else if (indexPath.section==1)
+    {
+    
+      view.titleLbl.text = @"最多人玩";
+    
+    
+    }
+    
+    
+    return view;
+}
+
+
 
 - (NSInteger)numberOfSectionsInCollectionView:(UICollectionView *)collectionView {
 #warning Incomplete method implementation -- Return the number of sections
+    
+    
+    if (_mType==EZCollectionTypeRecommend) {
+        return 2;
+    }
+    
     return 1;
 }
 
 
 - (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section {
 #warning Incomplete method implementation -- Return the number of items in the section
+    
+    
+    if (_mType==EZCollectionTypeRecommend) {
+        
+        
+        if (section==0) {
+            return [EZAppHelper shareAppHelper].history_record.count;
+        }
+
+        
+    }
+
+    
+    
     return mItems.count;
 }
 
@@ -230,12 +442,51 @@ static NSString * const reuseIdentifier = @"Cell";
     [cell.playButton addTarget:self action:@selector(playGame:event:) forControlEvents:UIControlEventTouchUpInside];
     
     
+    if (_mType==EZCollectionTypeRecommend) {
     
-    NSDictionary *item=[mItems objectAtIndex:indexPath.row];
+        if (indexPath.section==0) {
+            
+            
+            NSDictionary *item=[[EZAppHelper shareAppHelper].history_record objectAtIndex:indexPath.row];
+            
+            
+            
+            [cell setInfo:item];
+            
+            
+            
+            
+        }else if(indexPath.section==1)
+        {
+            
+            
+            NSDictionary *item=[mItems objectAtIndex:indexPath.row];
+            
+            
+            
+            [cell setInfo:item];
+            
+            
+        }
+
+    
+    }else
+    {
+    
+    
+        NSDictionary *item=[mItems objectAtIndex:indexPath.row];
+        
+        
+        
+        [cell setInfo:item];
     
     
     
-    [cell setInfo:item];
+    }
+
+    
+    
+    
     
     
     
@@ -271,13 +522,69 @@ static NSString * const reuseIdentifier = @"Cell";
     
     UINavigationController *nav=[[UINavigationController alloc]initWithRootViewController:player];
     
-     NSDictionary *item=[mItems objectAtIndex:indexPath.row];
+    
+    NSDictionary *item;
+    
+    
+    
+    
+    if (_mType==EZCollectionTypeRecommend) {
+    
+    
+        if (indexPath.section==0) {
+            
+            
+            item=[[EZAppHelper shareAppHelper].history_record objectAtIndex:indexPath.row];
+            
+            
+            
+            
+        }else if(indexPath.section==1)
+        {
+            
+            
+            item=[mItems objectAtIndex:indexPath.row];
+            
+            
+            
+            
+        }
+        
+
+    
+    }else
+    {
+    
+    
+        item=[mItems objectAtIndex:indexPath.row];
+
+    
+    
+    }
+    
+    
+    
+    
+    [self addHitsWithGameID:[item objectForKey:@"serial"]];
     
     
     player.myItem=item;
     
     
-    [self presentViewController:nav animated:YES completion:nil];
+    [self presentViewController:nav animated:YES completion:^{
+    
+    [[EZAppHelper shareAppHelper]addHistoryWithDic:item];
+        
+        EZCollectionViewCell *cell=(EZCollectionViewCell *)[collectionView cellForItemAtIndexPath:indexPath];
+        
+        [cell setInfo:item];
+        
+    
+    }];
+    
+    
+    
+    
     
     
 
@@ -326,22 +633,73 @@ static NSString * const reuseIdentifier = @"Cell";
     UINavigationController *nav=[[UINavigationController alloc]initWithRootViewController:player];
 
     
+    
+    NSDictionary *item;
+    
+    
+    
+    
+    if (_mType==EZCollectionTypeRecommend) {
+        
+        
+        if (indexPath.section==0) {
+            
+            
+            item=[[EZAppHelper shareAppHelper].history_record objectAtIndex:indexPath.row];
+            
+            
+            
+            
+        }else if(indexPath.section==1)
+        {
+            
+            
+            item=[mItems objectAtIndex:indexPath.row];
+            
+            
+            
+            
+        }
+        
+        
+        
+    }else
+    {
+        
+        
+        item=[mItems objectAtIndex:indexPath.row];
+        
+        
+        
+    }
+
   
     
-    NSDictionary *item=[mItems objectAtIndex:indexPath.row];
+   
     
+    
+     [self addHitsWithGameID:[item objectForKey:@"serial"]];
     
     player.myItem=item;
     
     
-    [self presentViewController:nav animated:YES completion:nil];
+    [self presentViewController:nav animated:YES completion:^{
+    
+      [[EZAppHelper shareAppHelper]addHistoryWithDic:item];
+        EZCollectionViewCell *cell=(EZCollectionViewCell *)[self.collectionView cellForItemAtIndexPath:indexPath];
+        
+        [cell setInfo:item];
 
     
+    }];
+
+    
+   
     
     
     
-    
-    }
+   
+}
 
 
 
@@ -369,4 +727,120 @@ static NSString * const reuseIdentifier = @"Cell";
     
 }
 
+
+
+-(void)addHitsWithGameID:(NSString *)gameID
+{
+
+
+
+
+
+
+    AFHTTPRequestOperationManager *manager=[AFHTTPRequestOperationManager manager];
+    
+    [manager setRequestSerializer:[AFJSONRequestSerializer serializerWithWritingOptions:NSJSONWritingPrettyPrinted]];
+    [manager setResponseSerializer:[AFHTTPResponseSerializer serializer]];
+    manager.responseSerializer.acceptableContentTypes=[NSSet setWithObjects:@"text/html", nil];
+    
+    [manager GET:[NSString stringWithFormat:@"http://93app.com/game/h5/proc/hits.php?ucode=%@&version=%@&serial=%@",UID,VERSION,gameID] parameters:nil success:^(AFHTTPRequestOperation *operation, id responseObject) {
+        
+        
+        
+         NSDictionary *dic=[[EZAppHelper shareAppHelper]happy_base64_decode:[[NSString alloc]initWithData:(NSData *)responseObject encoding:NSUTF8StringEncoding]];
+        
+        
+        NSLog(@"%@:%@",NSStringFromSelector(_cmd),dic);
+        
+        if ([dic objectForKey:@"status"]) {
+            
+            
+            
+            
+            
+        }
+        
+        
+    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+        
+       
+    
+        
+        
+        
+    
+    }];
+
+
+
+
+
+
+}
+
+
+-(void)scrollViewDidScroll:(UIScrollView *)scrollView
+{
+
+   
+    UIViewController *controller=self.parentViewController;
+    
+    if ([controller isKindOfClass:[EZSearchViewController class]]) {
+        
+        EZSearchViewController *temp=(EZSearchViewController *)controller;
+        
+        if ([temp.searchBar isFirstResponder]) {
+             [temp.view endEditing:YES];
+        }
+        
+        
+        
+        
+        
+    }
+    
+    
+    
+        
+        
+        
+    
+
+
+
+
+}
+-(void)initNav
+{
+
+
+
+    self.navigationItem.title=@"关注游戏";
+    
+    UIButton *button=[UIButton buttonWithType:UIButtonTypeCustom];
+    button.frame=CGRectMake(0, 0, 32, 32);
+    [button setImage:[UIImage imageNamed:@"nav_back"] forState:UIControlStateNormal];
+    
+    
+    [button addTarget:self action:@selector(backButtonPresed) forControlEvents:UIControlEventTouchUpInside];
+    
+    
+    UIBarButtonItem *backIyem=[[UIBarButtonItem alloc]initWithCustomView:button];
+    
+    
+    
+    self.navigationItem.leftBarButtonItem=backIyem;
+
+
+
+}
+-(void)backButtonPresed
+{
+
+
+    [self.navigationController popViewControllerAnimated:YES];
+
+
+
+}
 @end

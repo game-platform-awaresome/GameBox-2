@@ -8,12 +8,15 @@
 
 #import "EZCollectionViewCell.h"
 #import "UIImageView+WebCache.h"
+#import "EZAppHelper.h"
 @implementation EZCollectionViewCell
 
 - (void)awakeFromNib {
     // Initialization code
-    [self setBackgroundColor:[UIColor colorWithPatternImage:[[UIImage imageNamed:@"cell_bg"]resizableImageWithCapInsets:UIEdgeInsetsMake(2, 2, 2, 2)]]];
+   
+    UIImageView *bg=[[UIImageView alloc]initWithImage:[[UIImage imageNamed:@"cell_bg"]resizableImageWithCapInsets:UIEdgeInsetsMake(2, 2, 2, 2)]];
     
+    [self setBackgroundView:bg];
     
 }
 -(void)setInfo:(NSDictionary *)item
@@ -30,6 +33,26 @@
 
 
     [self.iconView sd_setImageWithURL:[NSURL URLWithString:image] placeholderImage:[UIImage imageNamed:@"cell_icon"]];
+    
+    
+    
+    if ([[EZAppHelper shareAppHelper].history_record containsObject:item]) {
+        
+        
+        
+        self.flagView.hidden=NO;
+        
+        
+        
+    }else
+    {
+    
+        self.flagView.hidden=YES;
+    
+    
+    }
+    
+    
 
 }
 @end

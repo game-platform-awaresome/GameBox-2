@@ -45,12 +45,20 @@
                             <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                         </state>
                     </button>
+                    <imageView hidden="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="guanzhu" translatesAutoresizingMaskIntoConstraints="NO" id="Je6-2P-rXJ">
+                        <rect key="frame" x="0.0" y="0.0" width="40" height="40"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="40" id="bhF-cx-7CL"/>
+                            <constraint firstAttribute="width" constant="40" id="nOv-qD-aOi"/>
+                        </constraints>
+                    </imageView>
                 </subviews>
                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
             </view>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
             <constraints>
                 <constraint firstItem="c3e-Gx-odO" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="10" id="HMB-wF-IyP"/>
+                <constraint firstItem="Je6-2P-rXJ" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="OdP-bx-VWl"/>
                 <constraint firstAttribute="trailing" secondItem="lAf-Hz-SdR" secondAttribute="trailing" constant="10" id="TUe-ye-eyb"/>
                 <constraint firstItem="lAf-Hz-SdR" firstAttribute="top" secondItem="c3e-Gx-odO" secondAttribute="bottom" constant="7" id="TXh-Sh-BZR"/>
                 <constraint firstItem="lAf-Hz-SdR" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="10" id="UKy-lh-pkx"/>
@@ -60,9 +68,11 @@
                 <constraint firstItem="c3e-Gx-odO" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" constant="10" id="fWp-Zg-Rbo"/>
                 <constraint firstItem="PJK-mC-Fnw" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" constant="10" id="gxa-j5-3C5"/>
                 <constraint firstItem="PJK-mC-Fnw" firstAttribute="leading" secondItem="c3e-Gx-odO" secondAttribute="trailing" constant="10" id="lNR-zs-mrQ"/>
+                <constraint firstItem="Je6-2P-rXJ" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="qfH-ZQ-Hy2"/>
                 <constraint firstItem="lAf-Hz-SdR" firstAttribute="top" secondItem="W95-oS-H20" secondAttribute="bottom" constant="7" id="rDR-o4-1S8"/>
             </constraints>
             <connections>
+                <outlet property="flagView" destination="Je6-2P-rXJ" id="dLJ-bP-0WR"/>
                 <outlet property="iconView" destination="c3e-Gx-odO" id="Vbk-w1-WU0"/>
                 <outlet property="infoLbl" destination="lAf-Hz-SdR" id="LSh-oi-mMq"/>
                 <outlet property="playButton" destination="W95-oS-H20" id="HC0-lf-yjm"/>
@@ -73,6 +83,7 @@
     </objects>
     <resources>
         <image name="cell_icon" width="54" height="54"/>
+        <image name="guanzhu" width="40" height="40"/>
         <image name="index_cell_play" width="60" height="24"/>
     </resources>
 </document>

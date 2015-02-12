@@ -13,4 +13,5 @@
 +(EZAppHelper *)shareAppHelper;
 -(void)addHistoryWithDic:(NSDictionary *)item;
 -(NSDictionary *)happy_base64_decode:(NSString *)source;
+- (void)saveItemsToFile:(NSArray *)items cacheId:(NSString *)cacheId;
 @end

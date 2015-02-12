@@ -17,15 +17,15 @@
 #define IS_IOS8 (BOOL)([[[UIDevice currentDevice] systemVersion]floatValue]>=8.0 ? YES : NO)
 
 
-#define APP_ID @"945962817"
+#define APP_ID @"843136554"
 
-#define APP_URL @"https://itunes.apple.com/cn/app/id945962817?mt=8"
+#define APP_URL @"https://itunes.apple.com/cn/app/id843136554?mt=8"
 
 
-#define UMENG_APP_ID @"54d43d71fd98c557e4000dab"
+#define UMENG_APP_ID @"54d9bad4fd98c5e24e00025f"
 #define UMENG_APP_SHARE_ID @"52da412756240b498805ec08"
-#define ADMOB_APP_ID @"ca-app-pub-6780489147196436/9197691505"
-#define ADMOB_SCREEN_APP_ID @"ca-app-pub-6780489147196436/1674424708"
+#define ADMOB_APP_ID @"ca-app-pub-6780489147196436/3145667908"
+#define ADMOB_SCREEN_APP_ID @"ca-app-pub-6780489147196436/4622401103"
 
 
 

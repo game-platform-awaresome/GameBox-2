@@ -7,11 +7,15 @@
 //
 
 #import <UIKit/UIKit.h>
-
-@interface AppDelegate : UIResponder <UIApplicationDelegate>
+#import "GADInterstitial.h"
+@interface AppDelegate : UIResponder <UIApplicationDelegate,UIAlertViewDelegate,GADInterstitialDelegate>
 
 @property (strong, nonatomic) UIWindow *window;
 
+@property(retain,nonatomic)NSString *updateUrl;//版本更新
+@property(retain,nonatomic)NSString *mAppAlertGoUrl;//评分
 
+
+@property (nonatomic, strong)GADInterstitial *interstitial;
 @end
 

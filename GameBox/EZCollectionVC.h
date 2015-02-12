@@ -11,7 +11,11 @@ typedef enum{
 
   EZCollectionTypeRecommend=0,
   EZCollectionTypeNew=1,
-  EZCollectionTypeHot=2
+  EZCollectionTypeHot=2,
+    
+  EZCollectionTypeSearch=3,
+    
+  EZCollectionTypeLoved=4
 
 } EZCollectionType;
 @interface EZCollectionVC : UICollectionViewController
@@ -25,5 +29,7 @@ typedef enum{
 
 }
 @property(assign,nonatomic)EZCollectionType mType;
+@property(strong,nonatomic)NSString *mKeyword;
 -(instancetype)initWithCollectionViewLayout:(UICollectionViewLayout *)layout AndType:(EZCollectionType)type;
+-(void)refreshData;
 @end
